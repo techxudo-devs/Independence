@@ -1,3 +1,4 @@
+import About from './About'
 import Contact from './Contact'
 import Footer from '../common/Footer'
 import Hero from './Hero'
@@ -10,6 +11,9 @@ const Homepage = () => {
     <div>
         <div id="home">
           <Hero />
+        </div>
+        <div id="about">
+          <About />
         </div>
         <div id="events">
           <LuckyDraw />
