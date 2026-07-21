@@ -5,7 +5,12 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } } as const,
 };
 
-const Sponsorship = () => {
+const SPONSORS = [
+  { src: '/images/sponsor1.jpeg', alt: 'Sponsor 1' },
+  { src: '/images/sponsor2.jpeg', alt: 'Sponsor 2' },
+];
+
+const PresentedBy = () => {
   return (
     <section className="relative w-full overflow-hidden">
       {/* Base deep gradient */}
@@ -32,7 +37,7 @@ const Sponsorship = () => {
       {/* Subtle grain overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")', backgroundRepeat: 'repeat', backgroundSize: '128px 128px' }} />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-5 py-10">
+      <div className="relative z-10 max-w-5xl mx-auto px-5 py-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -46,30 +51,37 @@ const Sponsorship = () => {
             variants={fadeUp}
             className="text-3xl md:text-5xl font-black leading-[1.05] text-white life"
           >
-            <span className="block">Sponsored &amp; Secured By</span>
+            <span className="block">Presented By</span>
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
             className="mt-4 max-w-md text-base text-white/30 font-light leading-relaxed plus"
           >
-            Ensuring a safe, seamless, and world-class experience for every
-            guest, performer, and participant at the event.
+            Proudly supported by organizations that believe in celebrating
+            heritage, unity, and the spirit of Pakistan.
           </motion.p>
 
-          {/* Logo Card */}
+          {/* Sponsor Cards */}
           <motion.div
             variants={fadeUp}
-            className="mt-10 relative group"
+            className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl"
           >
-            {/* <div className="absolute -inset-8 rounded-3xl bg-emerald-500/[0.03] blur-2xl group-hover:bg-emerald-500/[0.06] transition-colors duration-700 pointer-events-none" /> */}
-            <div className="relative">
-              <img
-                src="/logos/mbk.png"
-                alt="Security Partner Logo"
-                className="h-28 md:h-40 w-auto object-contain"
-              />
-            </div>
+            {SPONSORS.map((sponsor) => (
+              <div
+                key={sponsor.alt}
+                className="group relative"
+              >
+                {/* <div className="absolute -inset-4 rounded-3xl bg-emerald-500/[0.03] blur-2xl group-hover:bg-emerald-500/[0.06] transition-colors duration-700 pointer-events-none" /> */}
+                <div className="relative">
+                  <img
+                    src={sponsor.src}
+                    alt={sponsor.alt}
+                    className="max-h-20 md:max-h-28 w-auto object-contain"
+                  />
+                </div>
+              </div>
+            ))}
           </motion.div>
         </motion.div>
       </div>
@@ -77,4 +89,4 @@ const Sponsorship = () => {
   );
 };
 
-export default Sponsorship;
+export default PresentedBy;

@@ -2,6 +2,7 @@ import Contact from './Contact'
 import Footer from '../common/Footer'
 import Hero from './Hero'
 import LuckyDraw from './LuckyDraw'
+import PresentedBy from './PresentedBy'
 import Sponsorship from './Sponsorship'
 
 const Homepage = () => {
@@ -15,6 +16,9 @@ const Homepage = () => {
         </div>
         <div id="sponsorship">
           <Sponsorship />
+        </div>
+        <div id="presented">
+          <PresentedBy />
         </div>
         <div id="contact">
           <Contact />
