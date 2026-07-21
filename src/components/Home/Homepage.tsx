@@ -3,12 +3,14 @@ import Contact from './Contact'
 import Footer from '../common/Footer'
 import Hero from './Hero'
 import LuckyDraw from './LuckyDraw'
+import Navbar from '../common/Navbar'
 import PresentedBy from './PresentedBy'
 import Sponsorship from './Sponsorship'
 
 const Homepage = () => {
   return (
     <div>
+        <Navbar />
         <div id="home">
           <Hero />
         </div>
