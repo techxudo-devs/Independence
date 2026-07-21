@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, X } from 'lucide-react';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '#home' },
@@ -55,12 +55,35 @@ function NavItem({ label, href }: { label: string; href: string }) {
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.width = '100%';
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, scrollY ? -parseInt(scrollY) : 0);
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+    };
+  }, [mobileOpen]);
 
   return (
     <motion.nav
@@ -113,12 +136,89 @@ const Navbar = () => {
         </a>
 
         {/* Mobile menu button */}
-        <button className="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
-          <span className="w-5 h-[1.5px] bg-white/60 rounded-full" />
-          <span className="w-4 h-[1.5px] bg-white/40 rounded-full" />
-          <span className="w-5 h-[1.5px] bg-white/60 rounded-full" />
+        <button
+          className="md:hidden flex flex-col gap-1.5 p-2 relative z-[60]"
+          aria-label="Menu"
+          onClick={() => setMobileOpen((prev) => !prev)}
+        >
+          <motion.span
+            className="w-5 h-[1.5px] bg-white/60 rounded-full block"
+            animate={mobileOpen ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }}
+            transition={{ duration: 0.25 }}
+          />
+          <motion.span
+            className="w-4 h-[1.5px] bg-white/40 rounded-full block"
+            animate={mobileOpen ? { opacity: 0, x: -8 } : { opacity: 1, x: 0 }}
+            transition={{ duration: 0.2 }}
+          />
+          <motion.span
+            className="w-5 h-[1.5px] bg-white/60 rounded-full block"
+            animate={mobileOpen ? { rotate: -45, y: -5 } : { rotate: 0, y: 0 }}
+            transition={{ duration: 0.25 }}
+          />
         </button>
       </div>
+
+      {/* Backdrop */}
+      <motion.div
+        className="md:hidden fixed inset-0 z-[55] bg-black/50 backdrop-blur-sm"
+        initial={false}
+        animate={mobileOpen ? { opacity: 1, pointerEvents: 'auto' as const } : { opacity: 0, pointerEvents: 'none' as const }}
+        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+        onClick={() => setMobileOpen(false)}
+      />
+
+      {/* Sidebar panel — slides from right */}
+      <motion.div
+        className="md:hidden fixed top-0 right-0 z-[56] h-full w-[80%] max-w-sm bg-[#030e06]/95 backdrop-blur-2xl border-l border-white/[0.06] shadow-[-8px_0_40px_rgba(0,0,0,0.5)] flex flex-col"
+        initial={false}
+        animate={mobileOpen ? { x: 0 } : { x: '100%' }}
+        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+      >
+        {/* Sidebar header */}
+        <div className="flex items-center justify-between px-6 h-16 border-b border-white/[0.06]">
+          <span className="text-lg font-black text-white life tracking-tight">Youm-e-Azadi</span>
+          <button
+            onClick={() => setMobileOpen(false)}
+            className="p-2 -mr-2 rounded-lg text-white/50 hover:text-white hover:bg-white/[0.06] transition-all duration-200"
+            aria-label="Close menu"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Nav links */}
+        <div className="flex flex-col gap-1 px-4 py-6 flex-1">
+          {NAV_ITEMS.map((item, i) => (
+            <motion.a
+              key={item.label}
+              href={item.href}
+              onClick={() => setMobileOpen(false)}
+              className="plus text-[15px] font-medium text-white/60 hover:text-emerald-300 hover:bg-emerald-500/[0.06] rounded-lg px-4 py-3 tracking-wide transition-all duration-200"
+              initial={false}
+              animate={mobileOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+              transition={{ duration: 0.35, delay: mobileOpen ? i * 0.05 + 0.15 : 0, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {item.label}
+            </motion.a>
+          ))}
+        </div>
+
+        {/* Sidebar footer CTA */}
+        <div className="px-4 pb-8">
+          <motion.a
+            href="#contact"
+            onClick={() => setMobileOpen(false)}
+            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-lg text-sm font-bold tracking-wide text-[#02180b] bg-white hover:bg-neutral-100 transition-all duration-300 plus"
+            initial={false}
+            animate={mobileOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+            transition={{ duration: 0.35, delay: mobileOpen ? NAV_ITEMS.length * 0.05 + 0.2 : 0, ease: [0.16, 1, 0.3, 1] }}
+          >
+            Contact
+            <ArrowRight className="w-4 h-4" />
+          </motion.a>
+        </div>
+      </motion.div>
     </motion.nav>
   );
 };

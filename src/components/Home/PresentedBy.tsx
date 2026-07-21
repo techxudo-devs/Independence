@@ -65,7 +65,7 @@ const PresentedBy = () => {
           {/* Sponsor Cards */}
           <motion.div
             variants={fadeUp}
-            className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl"
+            className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl justify-items-center"
           >
             {SPONSORS.map((sponsor) => (
               <div

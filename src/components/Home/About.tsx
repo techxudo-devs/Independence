@@ -98,7 +98,7 @@ const About = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
-            className="grid grid-cols-3 gap-3 md:gap-4"
+            className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4"
           >
             {CARDS.slice(0, 3).map((card) => (
               <Card key={card.src} card={card} />
@@ -111,7 +111,7 @@ const About = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
-            className="grid grid-cols-2 gap-3 md:gap-4"
+            className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4"
           >
             {CARDS.slice(3, 5).map((card) => (
               <Card key={card.src} card={card} />
@@ -124,7 +124,7 @@ const About = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
-            className="grid grid-cols-3 gap-3 md:gap-4"
+            className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4"
           >
             {CARDS.slice(5, 8).map((card) => (
               <Card key={card.src} card={card} />

@@ -320,7 +320,7 @@ const Hero = () => {
       />
 
       {/* Editorial Hero Content Layout */}
-      <main className="relative z-20 w-full max-w-4xl px-6 text-center pointer-events-none select-none -translate-y-6">
+      <main className="relative z-20 w-full max-w-4xl px-6 text-center -translate-y-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -350,12 +350,12 @@ const Hero = () => {
 
           {/* Call to Actions */}
           <div className="mt-10 flex flex-col sm:flex-row gap-4 pointer-events-auto">
-            <button className="px-8 py-4 rounded-lg text-xs font-bold tracking-wide text-[#02180b] bg-white hover:bg-neutral-100 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] transition-all duration-300 plus cursor-pointer">
+            <a href="#events" className="px-8 py-4 rounded-lg text-xs font-bold tracking-wide text-[#02180b] bg-white hover:bg-neutral-100 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] transition-all duration-300 plus cursor-pointer text-center">
               EXPLORE EVENTS
-            </button>
-            <button className="px-8 py-4 rounded-lg text-xs font-bold tracking-wide text-zinc-300 border border-zinc-700/60 bg-zinc-950/20 backdrop-blur-sm hover:text-white hover:bg-zinc-800/30 plus hover:border-zinc-500 cursor-pointer transition-all duration-300">
+            </a>
+            <a href="#contact" className="px-8 py-4 rounded-lg text-xs font-bold tracking-wide text-zinc-300 border border-zinc-700/60 bg-zinc-950/20 backdrop-blur-sm hover:text-white hover:bg-zinc-800/30 plus hover:border-zinc-500 cursor-pointer transition-all duration-300 text-center">
               JOIN CELEBRATIONS
-            </button>
+            </a>
           </div>
         </motion.div>
       </main>
