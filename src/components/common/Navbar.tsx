@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const NAV_ITEMS = [
@@ -50,20 +50,6 @@ function NavItem({ label, href }: { label: string; href: string }) {
         ))}
       </span>
     </a>
-  );
-}
-
-function GlowDot() {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const springX = useSpring(x, { stiffness: 300, damping: 30 });
-  const springY = useSpring(y, { stiffness: 300, damping: 30 });
-
-  return (
-    <motion.span
-      className="absolute w-1 h-1 rounded-full bg-emerald-400/60 blur-[1px] pointer-events-none"
-      style={{ left: springX, top: springY }}
-    />
   );
 }
 
