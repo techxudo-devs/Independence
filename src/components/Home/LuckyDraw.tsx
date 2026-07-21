@@ -18,25 +18,6 @@ const DETAILS = [
   },
 ];
 
-const RULES = [
-  {
-    title: 'How It Works',
-    items: [
-      'Register before August 14 to enter the draw pool',
-      'Each minute, one winner is randomly selected live on stage',
-      '240 names across a 4-hour window — no duplicates, no second chances',
-    ],
-  },
-  {
-    title: 'Fair & Transparent',
-    items: [
-      'All draws are conducted live with real-time verification',
-      'Results are displayed instantly on the main screen',
-      'Every participant has an equal probability of being selected',
-    ],
-  },
-];
-
 const stagger = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.1 } },
