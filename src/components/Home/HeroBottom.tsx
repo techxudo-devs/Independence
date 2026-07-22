@@ -132,61 +132,55 @@ const HeroBottom = () => {
         </div>
 
         {/* ================= BOTTOM ROW: STATS STRIP ================= */}
-        <div className="w-full bg-gradient-to-r from-[#003818] via-[#012d26] to-[#011a3b] border border-amber-300/30 rounded-2xl py-4 px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          
-          {/* Stat 1: Exhibition Stalls */}
-          <div className="flex items-center gap-3.5 w-full md:w-auto justify-center">
-            <Store className="w-8 h-8 text-[#f1c252] shrink-0 stroke-[1.8]" />
-            <div className="text-left leading-tight">
-              <p className="text-base sm:text-lg font-bold life text-white">240+</p>
-              <p className="text-[10px] sm:text-xs font-medium plus uppercase tracking-wide text-gray-200">EXHIBITION STALLS</p>
+        <div className="w-full bg-gradient-to-r from-[#003818] via-[#012d26] to-[#011a3b] border border-amber-300/30 rounded-2xl py-4 px-6 md:px-10">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-y-5 gap-x-4 items-center">
+            
+            {/* Stat 1 */}
+            <div className="flex items-center gap-3 justify-center">
+              <Store className="w-7 h-7 text-[#f1c252] shrink-0 stroke-[1.8]" />
+              <div className="text-left leading-tight">
+                <p className="text-sm sm:text-base font-bold life text-white">240+</p>
+                <p className="text-[10px] sm:text-[11px] font-medium plus uppercase tracking-wide text-gray-200">Stalls</p>
+              </div>
             </div>
-          </div>
 
-          <div className="hidden md:block h-8 w-[1px] bg-white/20" />
-
-          {/* Stat 2: Visitors Expected */}
-          <div className="flex items-center gap-3.5 w-full md:w-auto justify-center">
-            <Users className="w-8 h-8 text-[#f1c252] shrink-0 stroke-[1.8]" />
-            <div className="text-left leading-tight">
-              <p className="text-base sm:text-lg font-bold life text-white">5,000+</p>
-              <p className="text-[10px] sm:text-xs font-medium plus uppercase tracking-wide text-gray-200">VISITORS EXPECTED</p>
+            {/* Stat 2 */}
+            <div className="flex items-center gap-3 justify-center">
+              <Users className="w-7 h-7 text-[#f1c252] shrink-0 stroke-[1.8]" />
+              <div className="text-left leading-tight">
+                <p className="text-sm sm:text-base font-bold life text-white">5,000+</p>
+                <p className="text-[10px] sm:text-[11px] font-medium plus uppercase tracking-wide text-gray-200">Visitors</p>
+              </div>
             </div>
-          </div>
 
-          <div className="hidden md:block h-8 w-[1px] bg-white/20" />
-
-          {/* Stat 3: Lucky Draw */}
-          <div className="flex items-center gap-3.5 w-full md:w-auto justify-center">
-            <Gift className="w-8 h-8 text-[#f1c252] shrink-0 stroke-[1.8]" />
-            <div className="text-left leading-tight">
-              <p className="text-sm sm:text-base font-bold life text-white">4 HOURS</p>
-              <p className="text-[10px] sm:text-xs font-medium plus uppercase tracking-wide text-gray-200">LUCKY DRAW</p>
+            {/* Stat 3 */}
+            <div className="flex items-center gap-3 justify-center">
+              <Gift className="w-7 h-7 text-[#f1c252] shrink-0 stroke-[1.8]" />
+              <div className="text-left leading-tight">
+                <p className="text-sm sm:text-base font-bold life text-white">4 Hours</p>
+                <p className="text-[10px] sm:text-[11px] font-medium plus uppercase tracking-wide text-gray-200">Lucky Draw</p>
+              </div>
             </div>
-          </div>
 
-          <div className="hidden md:block h-8 w-[1px] bg-white/20" />
-
-          {/* Stat 4: Free Entry */}
-          <div className="flex items-center gap-3.5 w-full md:w-auto justify-center">
-            <Ticket className="w-8 h-8 text-[#f1c252] shrink-0 stroke-[1.8] rotate-45" />
-            <div className="text-left leading-tight">
-              <p className="text-sm sm:text-base font-bold life text-white">FREE</p>
-              <p className="text-[10px] sm:text-xs font-medium plus uppercase tracking-wide text-gray-200">ENTRY</p>
+            {/* Stat 4 */}
+            <div className="flex items-center gap-3 justify-center">
+              <Ticket className="w-7 h-7 text-[#f1c252] shrink-0 stroke-[1.8] rotate-45" />
+              <div className="text-left leading-tight">
+                <p className="text-sm sm:text-base font-bold life text-white">Free</p>
+                <p className="text-[10px] sm:text-[11px] font-medium plus uppercase tracking-wide text-gray-200">Entry</p>
+              </div>
             </div>
-          </div>
 
-          <div className="hidden md:block h-8 w-[1px] bg-white/20" />
-
-          {/* Stat 5: Family Festival */}
-          <div className="flex items-center gap-3.5 w-full md:w-auto justify-center">
-            <Baby className="w-8 h-8 text-[#f1c252] shrink-0 stroke-[1.8]" />
-            <div className="text-left leading-tight">
-              <p className="text-sm sm:text-base font-bold life text-white">FAMILY</p>
-              <p className="text-[10px] sm:text-xs font-medium plus uppercase tracking-wide text-gray-200">FESTIVAL</p>
+            {/* Stat 5 */}
+            <div className="flex items-center gap-3 justify-center col-span-2 md:col-span-1">
+              <Baby className="w-7 h-7 text-[#f1c252] shrink-0 stroke-[1.8]" />
+              <div className="text-left leading-tight">
+                <p className="text-sm sm:text-base font-bold life text-white">Family</p>
+                <p className="text-[10px] sm:text-[11px] font-medium plus uppercase tracking-wide text-gray-200">Festival</p>
+              </div>
             </div>
-          </div>
 
+          </div>
         </div>
 
       </div>
