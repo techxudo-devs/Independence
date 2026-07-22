@@ -79,8 +79,8 @@ const ThreeCards = () => {
           
           {/* Subtle Skyline Line Art Overlay in Background */}
           <div 
-            className="absolute right-0 bottom-0 w-full h-[65%] pointer-events-none opacity-20 bg-contain bg-right-bottom bg-no-repeat"
-            style={{ backgroundImage: 'url("/flags/karachi.png")' }}
+            className="absolute right-0 bottom-0 w-full h-[75%] pointer-events-none opacity-20 bg-contain bg-right-bottom bg-no-repeat"
+            style={{ backgroundImage: 'url("/images/minar.png")' }}
           />
 
           <div className="relative z-10">
@@ -126,7 +126,7 @@ const ThreeCards = () => {
             {/* Venue Image */}
             <div className="w-full h-40 sm:h-40 rounded-2xl overflow-hidden my-4 shadow-sm border border-slate-100">
               <img
-                src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&q=80&w=800"
+                src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&q=100&w=2000"
                 alt="Fairfield Showground Venue"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
@@ -151,7 +151,7 @@ const ThreeCards = () => {
                 <Train className="w-5 h-5 stroke-[1.8]" />
               </div>
               <span className="text-[11px] font-bold uppercase life text-slate-900">TRAIN</span>
-              <span className="text-[10px] text-slate-700 plus">Nearby Station</span>
+              <span className="text-[10px] text-slate-700 plus">Station</span>
             </div>
 
             {/* Bus */}

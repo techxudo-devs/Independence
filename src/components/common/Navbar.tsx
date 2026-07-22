@@ -4,12 +4,11 @@ import { ArrowRight, X } from 'lucide-react';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Activities', href: '#activities' },
-  { label: 'Speakers', href: '#speakers' },
-  { label: 'Sponsors', href: '#sponsors' },
-  { label: 'Gallery', href: '#gallery' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Highlights', href: '#highlights' },
+  { label: 'Events', href: '#about' },
+  { label: 'Event Schedule', href: '#schedule' },
+  { label: 'Sponsors', href: '#sponsorship' },
+  { label: 'Presented By', href: '#presented' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -217,7 +216,7 @@ const Navbar = () => {
         {/* Sidebar Register CTA */}
         <div className="px-4 pb-8">
           <motion.a
-            href="#register"
+          href="#contact"
             onClick={() => setMobileOpen(false)}
             className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full text-xs font-black tracking-wide text-neutral-900 bg-gradient-to-r from-[#edd382] via-[#f0c252] to-[#e1ad31] hover:brightness-105 transition-all duration-300 plus"
             initial={false}

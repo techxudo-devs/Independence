@@ -6,36 +6,36 @@ const fadeUp = {
 };
 
 const SPONSORS = [
-  { src: '/images/sponsor1.jpeg', alt: 'Sponsor 1' },
-  { src: '/images/sponsor2.jpeg', alt: 'Sponsor 2' },
+  { src: '/images/sponsor4.png', alt: 'Sponsor 1' },
+  { src: '/images/sponsor3.png', alt: 'Sponsor 2' },
 ];
 
 const PresentedBy = () => {
   return (
     <section className="relative w-full overflow-hidden">
       {/* Base deep gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#031a0b] via-[#040d06] to-[#031a0b]" />
+      <div className="absolute inset-0 bg-white" />
 
       {/* Ambient emerald glow — top center */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_45%_at_50%_0%,rgba(16,185,129,0.10),transparent_70%)] pointer-events-none" />
+      {/* <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_45%_at_50%_0%,rgba(16,185,129,0.10),transparent_70%)] pointer-events-none" /> */}
 
       {/* Secondary warm glow — left side */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_10%_30%,rgba(5,150,105,0.06),transparent_70%)] pointer-events-none" />
+      {/* <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_10%_30%,rgba(5,150,105,0.06),transparent_70%)] pointer-events-none" /> */}
 
       {/* Tertiary cool glow — right side */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_50%_at_90%_60%,rgba(16,185,129,0.04),transparent_60%)] pointer-events-none" />
+      {/* <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_50%_at_90%_60%,rgba(16,185,129,0.04),transparent_60%)] pointer-events-none" /> */}
 
       {/* Bottom ambient wash */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_30%_at_50%_100%,rgba(5,150,105,0.07),transparent_70%)] pointer-events-none" />
+      {/* <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_30%_at_50%_100%,rgba(5,150,105,0.07),transparent_70%)] pointer-events-none" /> */}
 
       {/* Top fade line from previous section */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/10 to-transparent" />
+      {/* <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/10 to-transparent" /> */}
 
       {/* Bottom separator */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/15 to-transparent" />
+      {/* <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/15 to-transparent" /> */}
 
       {/* Subtle grain overlay */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")', backgroundRepeat: 'repeat', backgroundSize: '128px 128px' }} />
+      {/* <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")', backgroundRepeat: 'repeat', backgroundSize: '128px 128px' }} /> */}
 
       <div className="relative z-10 max-w-5xl mx-auto px-5 py-10">
         <motion.div
@@ -49,14 +49,14 @@ const PresentedBy = () => {
           {/* Heading */}
           <motion.h2
             variants={fadeUp}
-            className="text-3xl md:text-5xl font-black leading-[1.05] text-white life"
+            className="text-3xl md:text-5xl font-black leading-[1.05] text-green-900 life"
           >
             <span className="block">Presented By</span>
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
-            className="mt-4 max-w-md text-base text-white/30 font-light leading-relaxed plus"
+            className="mt-4 max-w-md text-base text-green-700 font-light leading-relaxed plus"
           >
             Proudly supported by organizations that believe in celebrating
             heritage, unity, and the spirit of Pakistan.

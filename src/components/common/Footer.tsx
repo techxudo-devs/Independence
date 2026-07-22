@@ -20,7 +20,7 @@ const Footer = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-[#012b13] via-[#021f1d] via-60% to-[#01122a] opacity-95 pointer-events-none" />
 
       {/* ================= FAR RIGHT SKYLINE GRAPHIC ================= */}
-      <div className="absolute right-0 bottom-0 top-0 w-full sm:w-[45%] pointer-events-none z-0 flex items-end justify-end opacity-30 mix-blend-screen">
+      {/* <div className="absolute right-0 bottom-0 top-0 w-full sm:w-[45%] pointer-events-none z-0 flex items-end justify-end opacity-30 mix-blend-screen">
         <img 
           src="/flags/karachi.png" 
           alt="Pakistan Landmark" 
@@ -31,7 +31,7 @@ const Footer = () => {
           alt="Sydney Opera House" 
           className="h-[85%] object-contain object-bottom filter drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]" 
         />
-      </div>
+      </div> */}
 
       {/* ================= MAIN FOOTER CONTENT ================= */}
       <div className="relative z-10 max-w-7xl mx-auto px-5 py-6 md:py-8">
@@ -72,19 +72,16 @@ const Footer = () => {
               {/* Left Sub-Column */}
               <div className="flex flex-col space-y-1.5">
                 <a href="#home" className="hover:text-amber-300 transition-colors">Home</a>
-                <a href="#about" className="hover:text-amber-300 transition-colors">About Us</a>
-                <a href="#activities" className="hover:text-amber-300 transition-colors">Activities</a>
-                <a href="#speakers" className="hover:text-amber-300 transition-colors">Speakers</a>
-                <a href="#gallery" className="hover:text-amber-300 transition-colors">Gallery</a>
+                <a href="#highlights" className="hover:text-amber-300 transition-colors">Highlights</a>
+                <a href="#about" className="hover:text-amber-300 transition-colors">Events</a>
+                <a href="#schedule" className="hover:text-amber-300 transition-colors">Event Schedule</a>
               </div>
 
               {/* Right Sub-Column */}
               <div className="flex flex-col space-y-1.5">
-                <a href="#sponsors" className="hover:text-amber-300 transition-colors">Sponsors</a>
-                <a href="#faq" className="hover:text-amber-300 transition-colors">FAQ</a>
+                <a href="#sponsorship" className="hover:text-amber-300 transition-colors">Sponsors</a>
+                <a href="#presented" className="hover:text-amber-300 transition-colors">Presented By</a>
                 <a href="#contact" className="hover:text-amber-300 transition-colors">Contact</a>
-                <a href="#privacy" className="hover:text-amber-300 transition-colors">Privacy Policy</a>
-                <a href="#terms" className="hover:text-amber-300 transition-colors">Terms & Conditions</a>
               </div>
             </div>
           </div>
@@ -155,7 +152,7 @@ const Footer = () => {
                 placeholder="Your email address" 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-white text-slate-800 placeholder-slate-400 text-xs px-3.5 py-2 rounded-l-md focus:outline-none plus"
+                className="w-full bg-white text-slate-800 placeholder-slate-700 text-xs px-3.5 py-2 rounded-l-md focus:outline-none plus"
               />
               <button 
                 type="submit" 

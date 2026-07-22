@@ -1,12 +1,7 @@
-import About from './About'
-import Contact from './Contact'
 import Footer from '../common/Footer'
-import Hero from './Hero'
-import LuckyDraw from './LuckyDraw'
 import Navbar from '../common/Navbar'
 import PresentedBy from './PresentedBy'
 import Sponsorship from './Sponsorship'
-import Hero2 from './Hero2'
 import HeroBottom from './HeroBottom'
 import Hero3 from './Hero3'
 import EventHighlights from './EventHighlights'
@@ -21,14 +16,22 @@ const Homepage = () => {
         <div id="home">
           <Hero3 />
         </div>
-        <HeroBottom />
+        <div id="highlights">
+          <HeroBottom />
+        </div>
         <div id="about">
           {/* <About /> */}
           <EventHighlights />
         </div>
-        <Gift />
-        <Schedule />
-        <ThreeCards />
+        <div id="gift">
+          <Gift />
+        </div>
+        <div id="schedule">
+          <Schedule />
+        </div>
+        <div id="contact">
+          <ThreeCards />
+        </div>
         {/* <div id="events">
           <LuckyDraw />
         </div> */}

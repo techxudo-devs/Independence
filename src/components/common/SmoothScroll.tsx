@@ -38,7 +38,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       if (!el) return;
 
       e.preventDefault();
-      lenis.scrollTo(el as HTMLElement, { offset: 0 });
+      lenis.scrollTo(el as HTMLElement, { offset: -80 });
     };
 
     document.addEventListener('click', handleAnchorClick);
