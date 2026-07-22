@@ -159,10 +159,10 @@ const Schedule = () => {
           {/* Header */}
           <div className="text-center mb-8">
             <h2 className="text-base sm:text-lg life font-bold uppercase tracking-wide text-[#0F3A22] mb-1">
-              OUR ESTEEMED SPEAKERS
+              OUR RESPECTED GUESTS
             </h2>
             <p className="text-xs sm:text-sm plus text-slate-500">
-              Meet our distinguished speakers and special guests
+              Meet our speakers and special guests
             </p>
 
             {/* Star Divider */}

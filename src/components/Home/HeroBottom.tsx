@@ -44,91 +44,65 @@ const HeroBottom = () => {
       {/* Background Gradient Split */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#032312] via-[#021f2d] to-[#02132e] opacity-95 pointer-events-none" />
 
-      <div className="relative z-10 max-w-6xl mx-auto flex flex-col gap-5">
-        
-        {/* ================= TOP ROW: 3 CARDS ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
+        <div className="relative z-10 max-w-6xl mx-auto flex flex-col gap-5">
+
+        {/* ================= COUNTDOWN BLOCK ================= */}
+        <div className="relative bg-slate-950/50 border border-amber-400/20 rounded-2xl p-4 sm:p-5 shadow-xl backdrop-blur-md overflow-hidden">
           
-          {/* CARD 1: Countdown Title + Skyline Line Art (Left - 3 Cols) */}
-          {/* <div className="md:col-span-3 relative bg-gradient-to-b from-[#013518]/80 to-[#002410]/90 border border-amber-400/30 rounded-2xl p-4 flex flex-col items-center justify-center text-center overflow-hidden shadow-lg backdrop-blur-md min-h-[110px]">
-            <div className="absolute inset-x-0 bottom-0 h-14 pointer-events-none opacity-20 bg-contain bg-bottom bg-no-repeat" style={{ backgroundImage: 'url("/flags/karachi.png")' }} />
+          {/* Ambient glow */}
+          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-60 h-40 bg-[#f1c252]/8 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 flex flex-col items-center gap-3 sm:gap-4">
             
-            <p className="text-xs sm:text-xs font-medium uppercase tracking-wide text-[#f1c252]">
-              COUNTDOWN TO
+            {/* Title */}
+            <div className="text-center">
+              <p className="text-[10px] sm:text-xs font-medium uppercase tracking-wide plus text-[#f1c252]/80">
+                COUNTDOWN TO
+              </p>
+              <h3 className="text-base sm:text-lg md:text-xl font-bold life uppercase tracking-wider text-white mt-0.5 drop-shadow-lg">
+                THE BIG DAY
+              </h3>
+            </div>
+
+            {/* Timer Row */}
+            <div className="flex items-center justify-center gap-2 sm:gap-3 w-full max-w-lg mx-auto">
+              
+              {[
+                { value: timeLeft.days, label: 'Days' },
+                { value: timeLeft.hours, label: 'Hours' },
+                { value: timeLeft.minutes, label: 'Mins' },
+                { value: timeLeft.seconds, label: 'Secs' },
+              ].map((unit, i) => (
+                <div key={unit.label} className="flex items-center gap-2 sm:gap-3">
+                  {/* Number box */}
+                  <div className="relative flex flex-col items-center justify-center rounded-xl bg-gradient-to-b from-[#012d15]/90 via-[#011f0e]/90 to-[#011a0c]/95 border border-amber-300/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_0_20px_rgba(241,194,82,0.06)] px-3 sm:px-4 py-2.5 sm:py-3 min-w-[58px] sm:min-w-[72px] md:min-w-[84px]">
+                    <span className="text-2xl sm:text-3xl md:text-4xl font-bold life text-white leading-none tabular-nums">
+                      {String(unit.value).padStart(2, '0')}
+                    </span>
+                    <span className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.2em] plus text-[#f1c252] mt-1.5">
+                      {unit.label}
+                    </span>
+                    {/* Bottom accent glow */}
+                    <div className="absolute inset-x-3 -bottom-px h-[1px] bg-gradient-to-r from-transparent via-[#f1c252]/40 to-transparent" />
+                  </div>
+
+                  {/* Colon separator (not after last) */}
+                  {i < 3 && (
+                    <div className="flex flex-col items-center gap-1.5 -mx-0.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#f1c252]/70 animate-pulse" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#f1c252]/70 animate-pulse" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Date pill */}
+            <p className="text-[10px] sm:text-xs font-medium plus uppercase tracking-wide text-white/40">
+              14 — 16 August 2026
             </p>
-            <h3 className="text-base sm:text-xl font-bold life uppercase tracking-wide text-white mt-0.5 drop-shadow">
-              THE BIG DAY
-            </h3>
-          </div> */}
-
-          {/* CARD 2: Active Countdown Timer Boxes (Center - 6 Cols) */}
-          <div className="md:col-span-8 md:col-start-3 bg-slate-950/40 border border-amber-400/30 rounded-2xl p-2 sm:p-2.5 flex items-center justify-center gap-2 shadow-md backdrop-blur-sm">
-            
-            {/* Days Box */}
-            <div className="flex-1 bg-gradient-to-b from-[#012d15]/90 to-[#011a0c]/90 border border-amber-300/20 rounded-xl py-3 px-1 flex flex-col items-center justify-center shadow-inner">
-              <span className="text-2xl sm:text-3xl md:text-4xl font-bold life text-white leading-none">
-                {String(timeLeft.days).padStart(2, '0')}
-              </span>
-              <span className="text-[10px] sm:text-xs font-medium uppercase tracking-wide plus text-[#f1c252] mt-1">
-                DAYS
-              </span>
-            </div>
-
-            {/* Hours Box */}
-            <div className="flex-1 bg-gradient-to-b from-[#012d15]/90 to-[#011a0c]/90 border border-amber-300/20 rounded-xl py-3 px-1 flex flex-col items-center justify-center shadow-inner">
-              <span className="text-2xl sm:text-3xl md:text-4xl font-bold life text-white leading-none">
-                {String(timeLeft.hours).padStart(2, '0')}
-              </span>
-              <span className="text-[10px] sm:text-xs font-medium plus uppercase tracking-wide text-[#f1c252] mt-1">
-                HOURS
-              </span>
-            </div>
-
-            {/* Minutes Box */}
-            <div className="flex-1 bg-gradient-to-b from-[#012d15]/90 to-[#011a0c]/90 border border-amber-300/20 rounded-xl py-3 px-1 flex flex-col items-center justify-center shadow-inner">
-              <span className="text-2xl sm:text-3xl md:text-4xl font-bold life text-white leading-none">
-                {String(timeLeft.minutes).padStart(2, '0')}
-              </span>
-              <span className="text-[10px] sm:text-xs font-medium plus uppercase tracking-wide text-[#f1c252] mt-1">
-                MINUTES
-              </span>
-            </div>
-
-            {/* Seconds Box */}
-            <div className="flex-1 bg-gradient-to-b from-[#012d15]/90 to-[#011a0c]/90 border border-amber-300/20 rounded-xl py-3 px-1 flex flex-col items-center justify-center shadow-inner">
-              <span className="text-2xl sm:text-3xl md:text-4xl font-bold life text-white leading-none">
-                {String(timeLeft.seconds).padStart(2, '0')}
-              </span>
-              <span className="text-[10px] sm:text-xs font-medium plus uppercase tracking-wide text-[#f1c252] mt-1">
-                SECONDS
-              </span>
-            </div>
 
           </div>
-
-          {/* CARD 3: Celebrating Together (Right - 3 Cols) */}
-          {/* <div className="md:col-span-3 bg-gradient-to-b from-[#021d42]/80 to-[#01122b]/90 border border-amber-400/30 rounded-2xl p-3 flex flex-col items-center justify-center text-center shadow-lg backdrop-blur-md min-h-[110px]">
-            <p className="text-xs sm:text-xs font-medium uppercase tracking-wide plus text-white">
-              CELEBRATING TOGETHER
-            </p>
-            <p className="text-xs sm:text-lg font-bold life uppercase tracking-wide bg-gradient-to-r from-[#FFFEE0] via-[#E2A82B] to-[#976208] bg-clip-text text-transparent mt-0.5">
-              PAKISTAN & AUSTRALIA
-            </p>
-
-            <div className="flex items-center justify-center gap-1 mt-2">
-              <img 
-                src="/flags/pakistanFlag.png" 
-                alt="Pakistan" 
-                className="h-6 w-auto object-contain transform -rotate-12 filter drop-shadow" 
-              />
-              <img 
-                src="/flags/australiaFlag.png" 
-                alt="Australia" 
-                className="h-6 w-auto object-contain transform rotate-12 filter drop-shadow" 
-              />
-            </div>
-          </div> */}
-
         </div>
 
         {/* ================= BOTTOM ROW: STATS STRIP ================= */}

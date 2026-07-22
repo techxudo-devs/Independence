@@ -282,7 +282,7 @@ const ThreeCards = () => {
                     <textarea
                       name="message"
                       required
-                      rows={3}
+                      rows={7}
                       placeholder="Your Message"
                       value={formData.message}
                       onChange={handleChange}
@@ -292,7 +292,7 @@ const ThreeCards = () => {
                 </div>
 
                 {/* Submit Button */}
-                <div className="pt-3 flex justify-center">
+                <div className="flex justify-center">
                   <button
                     type="submit"
                     disabled={formState === 'submitting'}

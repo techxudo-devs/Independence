@@ -1,13 +1,12 @@
 import Footer from '../common/Footer'
 import Navbar from '../common/Navbar'
-import PresentedBy from './PresentedBy'
-import Sponsorship from './Sponsorship'
 import HeroBottom from './HeroBottom'
 import Hero3 from './Hero3'
 import EventHighlights from './EventHighlights'
 import Gift from './Gift'
 import Schedule from './Schedule'
 import ThreeCards from './ThreeCards'
+import Presentation from './Presentation'
 
 const Homepage = () => {
   return (
@@ -35,11 +34,11 @@ const Homepage = () => {
         {/* <div id="events">
           <LuckyDraw />
         </div> */}
-        <div id="sponsorship">
+        {/* <div id="sponsorship">
           <Sponsorship />
-        </div>
+        </div> */}
         <div id="presented">
-          <PresentedBy />
+          <Presentation />
         </div>
         {/* <div id="contact">
           <Contact />
