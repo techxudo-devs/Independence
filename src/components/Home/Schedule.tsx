@@ -111,7 +111,7 @@ const Schedule = () => {
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
 
         {/* ================= LEFT PANEL: EVENT SCHEDULE ================= */}
-        <div className="lg:col-span-4 bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-100 flex flex-col">
+        <div className="lg:col-span-4 bg-white rounded-2xl p-5 sm:p-6 md:p-8 shadow-sm border border-slate-100 flex flex-col">
           <h2 className="text-base sm:text-lg life font-bold uppercase tracking-wide text-[#0F3A22] mb-8">
             EVENT SCHEDULE
           </h2>
@@ -154,7 +154,7 @@ const Schedule = () => {
         </div>
 
         {/* ================= RIGHT PANEL: OUR ESTEEMED SPEAKERS ================= */}
-        <div className="lg:col-span-8 bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-100 flex flex-col justify-between">
+        <div className="lg:col-span-8 bg-white rounded-2xl p-5 sm:p-6 md:p-8 shadow-sm border border-slate-100 flex flex-col justify-between">
           
           {/* Header */}
           <div className="text-center mb-8">
