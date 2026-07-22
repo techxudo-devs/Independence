@@ -1,101 +1,176 @@
-import { motion } from 'framer-motion';
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } as const,
-};
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
-};
-
-const NAV_LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'Lucky Draw', href: '#events' },
-  { label: 'Contact', href: '#contact' },
-];
-
-const INFO_LINKS = [
-  { label: 'About the Event', href: '#about', soon: false },
-  { label: 'Sponsorship', href: '#sponsorship', soon: false },
-  { label: 'Presented By', href: '#presented', soon: false },
-];
+import React, { useState } from 'react';
+import { Send } from 'lucide-react';
+import { FaFacebookF, FaInstagram, FaYoutube, FaTiktok } from 'react-icons/fa';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      alert('Thank you for subscribing to our newsletter!');
+      setEmail('');
+    }
+  };
+
   return (
-    <footer className="relative w-full overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-[#020904]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_50%_100%,rgba(16,185,129,0.04),transparent_70%)] pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/10 to-transparent" />
+    <footer className="relative w-full bg-[#01142b] text-white overflow-hidden select-none border-t border-emerald-900/30">
+      
+      {/* ================= BACKGROUND GRADIENT SPLIT ================= */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#012b13] via-[#021f1d] via-60% to-[#01122a] opacity-95 pointer-events-none" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-5 pt-10">
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-40px' }}
-          className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-10"
-        >
-          {/* Brand */}
-          <motion.div variants={fadeUp} className="md:col-span-4">
-            <h3 className="text-3xl font-black text-white life tracking-tight">
-              Youm-e-Azadi
-            </h3>
-            <p className="text-xs uppercase tracking-wider text-emerald-400/50 font-semibold mt-1 plus">
-              August 14, 2025
-            </p>
-            <p className="mt-4 text-sm text-white/25 leading-relaxed max-w-sm plus">
-              Celebrating 79 years of sovereignty. A night of unity, music, and
-              history-making moments under one roof.
-            </p>
-          </motion.div>
-
-          {/* Quick Links */}
-          <motion.div variants={fadeUp} className="md:col-span-3 md:col-start-6">
-            <h4 className="text-xs uppercase tracking-wider text-emerald-600 font-bold mb-4 plus">
-              Quick Links
-            </h4>
-            <ul className="space-y-2.5">
-              {NAV_LINKS.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-white/35 hover:text-emerald-300/80 transition-colors duration-300 plus"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Info */}
-          <motion.div variants={fadeUp} className="md:col-span-3">
-            <h4 className="text-xs uppercase tracking-wider text-emerald-600 font-bold mb-4 plus">
-              Information
-            </h4>
-            <ul className="space-y-2.5">
-              {INFO_LINKS.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-white/35 hover:text-emerald-300/80 transition-colors duration-300 plus inline-flex items-center gap-2"
-                  >
-                    {link.label}
-                    {link.soon && (
-                      <span className="text-[9px] uppercase tracking-wider text-emerald-400/40 border border-emerald-500/10 rounded-full px-1.5 py-0.5 leading-none">
-                        Soon
-                      </span>
-                    )}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        </motion.div>
+      {/* ================= FAR RIGHT SKYLINE GRAPHIC ================= */}
+      <div className="absolute right-0 bottom-0 top-0 w-full sm:w-[45%] pointer-events-none z-0 flex items-end justify-end opacity-30 mix-blend-screen">
+        <img 
+          src="/flags/karachi.png" 
+          alt="Pakistan Landmark" 
+          className="h-[85%] object-contain object-bottom -mr-10 filter drop-shadow-[0_0_15px_rgba(16,185,129,0.3)]" 
+        />
+        <img 
+          src="/flags/australia.png" 
+          alt="Sydney Opera House" 
+          className="h-[85%] object-contain object-bottom filter drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]" 
+        />
       </div>
+
+      {/* ================= MAIN FOOTER CONTENT ================= */}
+      <div className="relative z-10 max-w-7xl mx-auto px-5 py-6 md:py-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          
+          {/* BRAND COLUMN (Left - 4 Cols) */}
+          <div className="md:col-span-4 flex items-start gap-3.5">
+            <img 
+              src="/images/federalLogo.png" 
+              alt="Federation of Pakistan Australia Logo" 
+              className="h-16 w-16 sm:h-20 sm:w-20 rounded-full object-contain shrink-0" 
+            />
+            <div className="flex flex-col text-left">
+              <span className="text-[11px] sm:text-xs tracking-wide text-[#e2a82b] font-medium plus uppercase leading-tight">
+                FEDERATION OF
+              </span>
+              <span className="text-base sm:text-lg font-bold life tracking-wide text-white uppercase leading-tight mt-0.5">
+                PAKISTAN AUSTRALIA
+              </span>
+
+              {/* Tagline */}
+              <p className="life italic text-amber-100/90 text-xs sm:text-sm mt-2 tracking-wide">
+                Together We Celebrate Freedom
+              </p>
+              <p className="text-[10px] sm:text-xs font-medium plus text-gray-300 tracking-wide uppercase mt-0.5">
+                Unity • Diversity • Friendship
+              </p>
+            </div>
+          </div>
+
+          {/* QUICK LINKS COLUMN (Center - 4 Cols) */}
+          <div className="md:col-span-4">
+            <h4 className="text-xs sm:text-sm font-bold life uppercase tracking-wide text-white mb-3">
+              QUICK LINKS
+            </h4>
+            
+            <div className="grid grid-cols-2 plus gap-x-4 gap-y-1.5 text-sm text-gray-300 font-medium">
+              {/* Left Sub-Column */}
+              <div className="flex flex-col space-y-1.5">
+                <a href="#home" className="hover:text-amber-300 transition-colors">Home</a>
+                <a href="#about" className="hover:text-amber-300 transition-colors">About Us</a>
+                <a href="#activities" className="hover:text-amber-300 transition-colors">Activities</a>
+                <a href="#speakers" className="hover:text-amber-300 transition-colors">Speakers</a>
+                <a href="#gallery" className="hover:text-amber-300 transition-colors">Gallery</a>
+              </div>
+
+              {/* Right Sub-Column */}
+              <div className="flex flex-col space-y-1.5">
+                <a href="#sponsors" className="hover:text-amber-300 transition-colors">Sponsors</a>
+                <a href="#faq" className="hover:text-amber-300 transition-colors">FAQ</a>
+                <a href="#contact" className="hover:text-amber-300 transition-colors">Contact</a>
+                <a href="#privacy" className="hover:text-amber-300 transition-colors">Privacy Policy</a>
+                <a href="#terms" className="hover:text-amber-300 transition-colors">Terms & Conditions</a>
+              </div>
+            </div>
+          </div>
+
+          {/* FOLLOW US & NEWSLETTER COLUMN (Right - 4 Cols) */}
+          <div className="md:col-span-4 flex flex-col justify-center">
+            
+            <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wide life text-white mb-2.5">
+              FOLLOW US
+            </h4>
+
+            {/* Social Icons Row */}
+            <div className="flex items-center gap-2.5 mb-4">
+              {/* Facebook */}
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noreferrer" 
+                aria-label="Facebook"
+                className="w-8 h-8 rounded-full bg-[#1877F2] flex items-center justify-center text-white hover:scale-110 transition-transform shadow"
+              >
+                <FaFacebookF className="w-4 h-4" />
+              </a>
+
+              {/* Instagram */}
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noreferrer" 
+                aria-label="Instagram"
+                className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center text-white hover:scale-110 transition-transform shadow"
+              >
+                <FaInstagram className="w-4 h-4" />
+              </a>
+
+              {/* YouTube */}
+              <a 
+                href="https://youtube.com" 
+                target="_blank" 
+                rel="noreferrer" 
+                aria-label="YouTube"
+                className="w-8 h-8 rounded-full bg-[#FF0000] flex items-center justify-center text-white hover:scale-110 transition-transform shadow"
+              >
+                <FaYoutube className="w-4 h-4" />
+              </a>
+
+              {/* TikTok */}
+              <a 
+                href="https://tiktok.com" 
+                target="_blank" 
+                rel="noreferrer" 
+                aria-label="TikTok"
+                className="w-8 h-8 rounded-full bg-black border border-white/20 flex items-center justify-center text-white hover:scale-110 transition-transform shadow"
+              >
+                <FaTiktok className="w-4 h-4" />
+              </a>
+            </div>
+
+            {/* Newsletter Subscription */}
+            <p className="text-xs text-gray-200 font-medium plus mb-1.5">
+              Subscribe to our newsletter
+            </p>
+
+            <form onSubmit={handleSubscribe} className="flex items-center max-w-sm">
+              <input 
+                type="email" 
+                required
+                placeholder="Your email address" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full bg-white text-slate-800 placeholder-slate-400 text-xs px-3.5 py-2 rounded-l-md focus:outline-none plus"
+              />
+              <button 
+                type="submit" 
+                aria-label="Subscribe"
+                className="bg-[#023319] hover:bg-[#034d26] border border-amber-300/30 px-3.5 py-2 rounded-r-md text-white transition-colors flex items-center justify-center cursor-pointer"
+              >
+                <Send className="w-3.5 h-3.5 text-white" />
+              </button>
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+
     </footer>
   );
 };
