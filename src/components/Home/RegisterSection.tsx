@@ -1,24 +1,26 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Send, Check, User, Mail } from 'lucide-react'
+import { Send, Check, User, Mail, Phone } from 'lucide-react'
 
 type FormState = 'idle' | 'submitting' | 'success'
 
 const RegisterSection = () => {
   const [name, setName] = useState('')
-  const [contact, setContact] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
   const [formState, setFormState] = useState<FormState>('idle')
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (!name.trim() || !contact.trim()) return
+    if (!name.trim() || !email.trim() || !phone.trim()) return
     setFormState('submitting')
     setTimeout(() => {
       setFormState('success')
       setTimeout(() => {
         setFormState('idle')
         setName('')
-        setContact('')
+        setEmail('')
+        setPhone('')
       }, 3000)
     }, 1800)
   }
@@ -67,7 +69,7 @@ const RegisterSection = () => {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-3">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                 {/* Name */}
                 <div className="relative">
                   <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -81,14 +83,27 @@ const RegisterSection = () => {
                   />
                 </div>
 
-                {/* Email / Phone */}
+                {/* Email */}
                 <div className="relative">
                   <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <input
-                    type="text"
-                    placeholder="Email or Phone"
-                    value={contact}
-                    onChange={(e) => setContact(e.target.value)}
+                    type="email"
+                    placeholder="Email Address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="w-full pl-10 pr-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-all plus"
+                  />
+                </div>
+
+                {/* Phone */}
+                <div className="relative">
+                  <Phone className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                     required
                     className="w-full pl-10 pr-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-all plus"
                   />

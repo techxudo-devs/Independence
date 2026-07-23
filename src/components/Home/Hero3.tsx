@@ -182,7 +182,7 @@ const Hero3 = () => {
 
           {/* Explore Activities Button */}
           <a
-            href="#activities"
+            href="#about"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-black/30 backdrop-blur-md border border-[#E8CD7A]/90 text-white hover:bg-[#E8CD7A]/15 font-medium text-xs tracking-wide cursor-pointer plus uppercase px-6 py-[15px] rounded-full active:scale-95 transition-all duration-300"
           >
             <span>EXPLORE ACTIVITIES</span>
