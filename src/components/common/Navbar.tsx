@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { useRegisterModal } from './RegisterModalContext';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '#home' },
@@ -58,6 +59,7 @@ function NavItem({ label, href }: { label: string; href: string }) {
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { openModal } = useRegisterModal();
 
   // FIX 1: Set Dark Background on Body & HTML to eliminate white scroll flicker
   useEffect(() => {
@@ -125,15 +127,15 @@ const Navbar = () => {
         </div>
 
         {/* CTA Register Button — Gold Capsule Pill */}
-        <a
-          href="#register"
-          className="hidden md:inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#edd382] via-[#f0c252] to-[#e1ad31] hover:brightness-105 transition-all duration-300 shadow-md shadow-yellow-500/10 plus hover:scale-98"
+        <button
+          onClick={openModal}
+          className="hidden md:inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#edd382] via-[#f0c252] to-[#e1ad31] hover:brightness-105 transition-all duration-300 shadow-md shadow-yellow-500/10 plus hover:scale-98 cursor-pointer"
         >
           <span className="text-xs tracking-wide plus font-medium text-neutral-900 uppercase">
             Register Free
           </span>
           <ArrowRight className="w-4 h-4 text-neutral-900 stroke-[2.5]" />
-        </a>
+        </button>
 
         {/* Mobile menu button */}
         <button
@@ -215,17 +217,16 @@ const Navbar = () => {
 
         {/* Sidebar Register CTA */}
         <div className="px-4 pb-8">
-          <motion.a
-          href="#contact"
-            onClick={() => setMobileOpen(false)}
-            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full text-xs font-black tracking-wide text-neutral-900 bg-gradient-to-r from-[#edd382] via-[#f0c252] to-[#e1ad31] hover:brightness-105 transition-all duration-300 plus"
+          <motion.button
+          onClick={() => { openModal(); setMobileOpen(false); }}
+            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full text-xs font-black tracking-wide text-neutral-900 bg-gradient-to-r from-[#edd382] via-[#f0c252] to-[#e1ad31] hover:brightness-105 transition-all duration-300 plus cursor-pointer"
             initial={false}
             animate={mobileOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
             transition={{ duration: 0.35, delay: mobileOpen ? NAV_ITEMS.length * 0.05 + 0.2 : 0, ease: [0.16, 1, 0.3, 1] }}
           >
             REGISTER FREE
             <ArrowRight className="w-4 h-4 text-neutral-900" />
-          </motion.a>
+          </motion.button>
         </div>
       </motion.div>
     </motion.nav>

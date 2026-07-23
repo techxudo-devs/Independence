@@ -120,7 +120,7 @@ const Footer = () => {
 
             {/* Newsletter Subscription */}
             <p className="text-xs text-gray-200 font-medium plus mb-1.5">
-              Pre-register for event
+              Pre-register for Federation Of Pakistan Australia Event
             </p>
 
             <form onSubmit={handleSubscribe} className="flex items-center max-w-sm">

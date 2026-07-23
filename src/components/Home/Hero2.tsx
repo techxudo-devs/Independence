@@ -7,8 +7,10 @@ import {
   ArrowRight, 
   Users
 } from 'lucide-react';
+import { useRegisterModal } from '../common/RegisterModalContext';
 
 const Hero2 = () => {
+  const { openModal } = useRegisterModal();
   return (
     <section className="relative min-h-[90vh] md:min-h-screen w-full overflow-hidden bg-[#020b14] text-white flex flex-col justify-between items-center py-6 px-4 sm:px-8 selection:bg-amber-400 selection:text-black">
       
@@ -198,7 +200,7 @@ const Hero2 = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-xl mx-auto my-8">
           
           {/* Register Free Button */}
-          <button className="w-full sm:w-auto flex items-center justify-center gap-3 bg-gradient-to-r from-[#F7D272] via-[#E5A831] to-[#C48618] text-[#120e03] px-8 py-3.5 rounded-full shadow-[0_4px_20px_rgba(229,168,49,0.35)] hover:scale-105 active:scale-95 transition-all duration-200 uppercase tracking-wide cursor-pointer">
+          <button onClick={openModal} className="w-full sm:w-auto flex items-center justify-center gap-3 bg-gradient-to-r from-[#F7D272] via-[#E5A831] to-[#C48618] text-[#120e03] px-8 py-3.5 rounded-full shadow-[0_4px_20px_rgba(229,168,49,0.35)] hover:scale-105 active:scale-95 transition-all duration-200 uppercase tracking-wide cursor-pointer">
             <Ticket className="w-5 h-5 fill-[#120e03] text-[#120e03]" />
             <span className="plus font-medium text-sm sm:text-base">REGISTER FREE</span>
             <ArrowRight className="w-4 h-4 text-black group-hover:translate-x-1 transition-transform" />

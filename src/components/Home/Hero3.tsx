@@ -9,8 +9,10 @@ import {
   Heart,
   UserCheck,
 } from 'lucide-react';
+import { useRegisterModal } from '../common/RegisterModalContext';
 
 const Hero3 = () => {
+  const { openModal } = useRegisterModal();
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden select-none bg-[#021810] pb-8 sm:pb-10 md:pb-10 px-4 sm:px-6 lg:px-8">
       
@@ -171,14 +173,14 @@ const Hero3 = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5 mb-6 sm:mb-8 w-full max-w-xs sm:max-w-none"
         >
           {/* Register Free Button */}
-          <a
-            href="#register"
+          <button
+            onClick={openModal}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#E3BF64] via-[#F8E399] to-[#CFA140] text-[#122416] font-medium text-xs tracking-wide plus uppercase px-6 py-4 rounded-full shadow-[0_4px_20px_rgba(232,205,122,0.4)] hover:brightness-105 active:scale-95 transition-all duration-300 cursor-pointer"
           >
             <UserCheck className="w-4 h-4 stroke-[2.5]" />
             <span>REGISTER FREE</span>
             <ArrowRight className="w-4 h-4 stroke-[2.5]" />
-          </a>
+          </button>
 
           {/* Explore Activities Button */}
           <a

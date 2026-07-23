@@ -18,9 +18,6 @@ const Homepage = () => {
       <div id="home">
         <Hero3 />
       </div>
-      <div id="highlights">
-        <HeroBottom />
-      </div>
       <div id="about">
         <EventHighlights />
       </div>
@@ -33,11 +30,14 @@ const Homepage = () => {
       <div id="schedule">
         <Schedule />
       </div>
-      <RegisterSection />
+      <div id="highlights">
+        <HeroBottom />
+      </div>
+      {/* <RegisterSection /> */}
       <div id="contact">
         <ThreeCards />
       </div>
-      <RegisterSection />
+      {/* <RegisterSection /> */}
       <div id="presented">
         <Presentation />
       </div>

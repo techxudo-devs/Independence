@@ -40,10 +40,10 @@ const HeroBottom = () => {
       <div className="relative z-10 max-w-6xl mx-auto flex flex-col gap-5">
 
         {/* ================= COUNTDOWN BLOCK ================= */}
-        <div className="relative bg-slate-950/50 border border-amber-400/20 rounded-2xl p-4 sm:p-5 shadow-xl backdrop-blur-md overflow-hidden">
+        <div className="relative overflow-hidden">
           
           {/* Ambient glow */}
-          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-60 h-40 bg-[#f1c252]/8 rounded-full blur-3xl pointer-events-none" />
+          {/* <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-60 h-40 bg-[#f1c252]/8 rounded-full blur-3xl pointer-events-none" /> */}
 
           <div className="relative z-10 flex flex-col items-center gap-3 sm:gap-4">
             
@@ -58,7 +58,7 @@ const HeroBottom = () => {
             </div>
 
             {/* Timer Row */}
-            <div className="flex items-center justify-center gap-2 sm:gap-3 w-full max-w-lg mx-auto">
+            <div className="flex items-center justify-center gap-3 sm:gap-4 w-full max-w-xl mx-auto">
               
               {[
                 { value: timeLeft.days, label: 'Days' },
@@ -66,22 +66,23 @@ const HeroBottom = () => {
                 { value: timeLeft.minutes, label: 'Mins' },
                 { value: timeLeft.seconds, label: 'Secs' },
               ].map((unit, i) => (
-                <div key={unit.label} className="flex items-center gap-2 sm:gap-3">
+                <div key={unit.label} className="flex items-center gap-3 sm:gap-4">
                   {/* Number box */}
-                  <div className="relative flex flex-col items-center justify-center py-4 min-w-[58px] sm:min-w-[72px] md:min-w-[84px]">
-                    <span className="text-2xl sm:text-3xl md:text-4xl font-bold life text-white leading-none tabular-nums">
+                  <div className="relative flex flex-col items-center justify-center rounded-xl bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/[0.1] backdrop-blur-sm px-3 sm:px-4 py-3 sm:py-4 min-w-[64px] sm:min-w-[80px] md:min-w-[96px] shadow-[0_0_20px_rgba(241,194,82,0.06)]">
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-[#f1c252]/[0.08] to-transparent pointer-events-none" />
+                    <span className="relative text-2xl sm:text-3xl md:text-4xl font-bold life text-white leading-none tabular-nums drop-shadow-[0_0_8px_rgba(255,255,255,0.15)]">
                       {String(unit.value).padStart(2, '0')}
                     </span>
-                    <span className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.2em] plus text-[#f1c252] mt-1.5">
+                    <span className="relative text-[8px] sm:text-[9px] md:text-[10px] font-semibold uppercase tracking-[0.25em] plus text-[#f1c252]/70 mt-2">
                       {unit.label}
                     </span>
                   </div>
 
                   {/* Colon separator (not after last) */}
                   {i < 3 && (
-                    <div className="flex flex-col items-center gap-1.5 -mx-0.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#f1c252]/70 animate-pulse" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#f1c252]/70 animate-pulse" />
+                    <div className="flex flex-col items-center gap-2 -mx-0.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#f1c252]/50 animate-pulse" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#f1c252]/50 animate-pulse" />
                     </div>
                   )}
                 </div>

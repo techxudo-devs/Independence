@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
+import { Star, Send } from 'lucide-react';
+import { useRegisterModal } from '../common/RegisterModalContext';
 
 // ==========================================
 // MODERN, BEAUTIFUL & VIBRANT SVG ICONS
@@ -320,6 +321,7 @@ const HIGHLIGHTS = [
 // ==========================================
 
 const EventHighlights = () => {
+  const { openModal } = useRegisterModal();
   return (
     <section className="w-full bg-[#FCFCFD] py-10 px-4 sm:px-6 lg:px-8 select-none overflow-hidden">
       <div className="max-w-[1440px] mx-auto">
@@ -372,6 +374,16 @@ const EventHighlights = () => {
               </motion.div>
             );
           })}
+        </div>
+
+        <div className="flex justify-center mt-10">
+          <button
+            onClick={openModal}
+            className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-[#024021] to-[#012613] hover:from-[#03522b] hover:to-[#023319] text-white text-xs font-medium uppercase tracking-wide shadow-md hover:scale-105 active:scale-95 transition-all duration-200 plus cursor-pointer"
+          >
+            REGISTER NOW
+            <Send className="w-4 h-4 text-white" />
+          </button>
         </div>
 
       </div>

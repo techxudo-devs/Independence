@@ -14,6 +14,7 @@ import {
   Check,
   ChevronDown
 } from 'lucide-react';
+import { useRegisterModal } from '../common/RegisterModalContext';
 
 const INQUIRY_OPTIONS = [
   'General Inquiry',
@@ -29,6 +30,7 @@ const INQUIRY_OPTIONS = [
 type FormState = 'idle' | 'submitting' | 'success';
 
 const ThreeCards = () => {
+  const { openModal } = useRegisterModal();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -94,7 +96,7 @@ const ThreeCards = () => {
           </div>
 
           {/* Learn More Button */}
-          <div className="relative z-10 pt-4">
+          <div className="relative z-10 pt-4 flex gap-2">
             <a
               href="#about"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-amber-300/40 bg-white/5 hover:bg-white/10 text-white text-xs font-medium uppercase tracking-wider transition-all duration-300 hover:border-amber-300 group cursor-pointer plus"
@@ -102,6 +104,13 @@ const ThreeCards = () => {
               <span>LEARN MORE</span>
               <ArrowRight className="w-4 h-4 text-amber-300 group-hover:translate-x-1 transition-transform" />
             </a>
+            <button
+              onClick={openModal}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-amber-300/40 bg-white/5 hover:bg-white/10 text-white text-xs font-medium uppercase tracking-wider transition-all duration-300 hover:border-amber-300 group cursor-pointer plus"
+            >
+              <span>REGISTER NOW</span>
+              <ArrowRight className="w-4 h-4 text-amber-300 group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
 
         </div>

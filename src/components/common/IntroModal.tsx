@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
-import { X, ArrowRight } from 'lucide-react';
+import { X, ArrowRight, Calendar, MapPin } from 'lucide-react';
+import { useRegisterModal } from './RegisterModalContext';
 
 const IntroModal = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const { openModal } = useRegisterModal();
 
   // Live Countdown State
   const [timeLeft, setTimeLeft] = useState({
@@ -55,10 +57,7 @@ const IntroModal = () => {
   const handleRegisterNow = () => {
     setIsOpen(false);
     setTimeout(() => {
-      const registerSection = document.getElementById('register');
-      if (registerSection) {
-        registerSection.scrollIntoView({ behavior: 'smooth' });
-      }
+      openModal();
     }, 100);
   };
 
@@ -66,10 +65,10 @@ const IntroModal = () => {
 
   return (
     /* CHANGED z-50 TO z-[999] HERE BELOW */
-    <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-[#020b14]/85 backdrop-blur-md transition-all duration-300 font-sans select-none">
+    <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-[#020b14]/85 backdrop-blur-md transition-all duration-300 select-none">
       
       {/* Modal Container */}
-      <div className="relative w-full max-w-lg bg-gradient-to-b from-[#021d12] via-[#020b14] to-[#01132e] border border-amber-400/30 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-hidden text-white">
+      <div className="relative w-full max-w-xl bg-gradient-to-b from-[#021d12] via-[#020b14] to-[#01132e] border border-amber-400/30 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-hidden text-white">
         
         {/* Background Ambient Glow */}
         <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-48 bg-[#f1c252]/10 rounded-full blur-3xl pointer-events-none" />
@@ -96,10 +95,10 @@ const IntroModal = () => {
           {/* Title */}
           <div>
             <p className="text-xs sm:text-sm font-medium uppercase tracking-wide text-[#f1c252]/90 plus">
-              Countdown To The Grand Event
+              Countdown To The Federation Of Pakistan Australia Event
             </p>
             <h2 className="text-2xl sm:text-3xl font-extrabold life uppercase tracking-wide text-white mt-1 drop-shadow-md">
-              CELEBRATION <span className="text-[#f1c252]">2026</span>
+              PAKISTAN INDEPENDENCE CELEBRATION <span className="text-[#f1c252]">2026</span>
             </h2>
           </div>
 
@@ -127,12 +126,13 @@ const IntroModal = () => {
 
           {/* Subtext info */}
           <div className="w-full py-2.5 px-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between text-xs sm:text-sm text-gray-300">
-            <span className="font-medium plus">14 — 16 August 2026</span>
-            <span className="font-medium plus text-[#f1c252] uppercase text-[11px] tracking-wide">Australia</span>
+            <span className="font-medium plus flex items-center gap-2"><Calendar className="w-4 h-4" /> 14 August 2026</span>
+            <span className="font-medium plus text-[#f1c252] uppercase text-xs tracking-wide flex items-center gap-1" ><MapPin className="w-4 h-4" /> Sydney, Australia</span>
           </div>
 
+            <p className='life text-xl'>I'm Coming</p>
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center gap-3 w-full mt-1">
+          <div className="flex flex-col sm:flex-row items-center gap-3 w-full">
             {/* Register Button */}
             <button
               onClick={handleRegisterNow}
@@ -140,14 +140,6 @@ const IntroModal = () => {
             >
               Register Now
               <ArrowRight className="w-4 h-4 stroke-[2.5]" />
-            </button>
-
-            {/* Enter Site Button */}
-            <button
-              onClick={handleClose}
-              className="w-full sm:w-auto py-3 px-6 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-amber-400/20 text-gray-200 hover:text-white font-medium plus text-sm uppercase tracking-wide transition-all cursor-pointer"
-            >
-              Enter Site
             </button>
           </div>
 

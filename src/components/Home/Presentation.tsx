@@ -7,7 +7,7 @@ const Presentation = () => {
         <div className="relative border border-gray-200/90 rounded-xl sm:rounded-2xl bg-white p-6 sm:p-8 pt-9 sm:pt-10 shadow-[0_2px_16px_rgba(0,0,0,0.02)]">
           
           {/* Top Heading Badge Centered On Border Line */}
-          <div className="absolute -top-11 left-1/2 -translate-x-1/2 flex items-center gap-3 whitespace-nowrap z-10">
+          <div className="absolute -top-15 left-1/2 -translate-x-1/2 flex items-center gap-3 whitespace-nowrap z-10">
             {/* <div className="w-6 sm:w-10 h-[1px] bg-gray-300" /> */}
             <span className="text-xl sm:text-2xl font-bold life text-gray-800 uppercase">
               OUR PARTNERS & SUPPORTERS

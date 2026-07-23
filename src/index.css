@@ -38,17 +38,13 @@ img {
   font-family: "Great Vibes", cursive;
 }
 
-/* MARQUEE TRACK FIX */
+/* MARQUEE TRACK (Mobile Sliding / Desktop Static) */
 .marquee-track {
   display: flex;
   width: max-content;
   align-items: center;
-  animation: marquee-scroll 25s linear infinite;
+  animation: marquee-scroll 16s linear infinite;
 }
-
-/* .marquee-track:hover {
-  animation-play-state: paused;
-} */
 
 @keyframes marquee-scroll {
   0% {
@@ -56,5 +52,15 @@ img {
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+/* Disable animation & center items on desktop (md+) */
+@media (min-width: 900px) {
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+    width: 100% !important;
+    justify-content: center !important;
   }
 }
