@@ -113,7 +113,7 @@ const HeroBottom = () => {
             <div className="flex items-center gap-3 justify-center">
               <Store className="w-7 h-7 text-[#f1c252] shrink-0 stroke-[1.8]" />
               <div className="text-left leading-tight">
-                <p className="text-sm sm:text-base font-bold life text-white">240+</p>
+                <p className="text-sm sm:text-base font-bold life text-white">50+</p>
                 <p className="text-[10px] sm:text-[11px] font-medium plus uppercase tracking-wide text-gray-200">Stalls</p>
               </div>
             </div>

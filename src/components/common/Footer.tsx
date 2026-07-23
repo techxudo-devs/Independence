@@ -116,28 +116,6 @@ const Footer = () => {
               >
                 <FaInstagram className="w-4 h-4" />
               </a>
-
-              {/* YouTube */}
-              <a 
-                href="https://youtube.com" 
-                target="_blank" 
-                rel="noreferrer" 
-                aria-label="YouTube"
-                className="w-8 h-8 rounded-full bg-[#FF0000] flex items-center justify-center text-white hover:scale-110 transition-transform shadow"
-              >
-                <FaYoutube className="w-4 h-4" />
-              </a>
-
-              {/* TikTok */}
-              <a 
-                href="https://tiktok.com" 
-                target="_blank" 
-                rel="noreferrer" 
-                aria-label="TikTok"
-                className="w-8 h-8 rounded-full bg-black border border-white/20 flex items-center justify-center text-white hover:scale-110 transition-transform shadow"
-              >
-                <FaTiktok className="w-4 h-4" />
-              </a>
             </div>
 
             {/* Newsletter Subscription */}

@@ -71,7 +71,7 @@ const ThreeCards = () => {
   };
 
   return (
-    <section className="w-full bg-[#f8f9fa] pb-10 px-4 sm:px-6 lg:px-8 select-none">
+    <section className="w-full bg-[#f8f9fa] py-10 px-4 sm:px-6 lg:px-8 select-none">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
         
         {/* ================= CARD 1: ABOUT FEDERATION (LEFT - 4 COLS) ================= */}

@@ -7,6 +7,7 @@ import Gift from './Gift'
 import Schedule from './Schedule'
 import ThreeCards from './ThreeCards'
 import Presentation from './Presentation'
+import RegisterSection from './RegisterSection'
 
 const Homepage = () => {
   return (
@@ -18,31 +19,27 @@ const Homepage = () => {
         <div id="highlights">
           <HeroBottom />
         </div>
+        <div id="register">
+          <RegisterSection />
+        </div>
         <div id="about">
-          {/* <About /> */}
           <EventHighlights />
         </div>
         <div id="gift">
           <Gift />
         </div>
+        <RegisterSection />
         <div id="schedule">
           <Schedule />
         </div>
+        <RegisterSection />
         <div id="contact">
           <ThreeCards />
         </div>
-        {/* <div id="events">
-          <LuckyDraw />
-        </div> */}
-        {/* <div id="sponsorship">
-          <Sponsorship />
-        </div> */}
+        <RegisterSection />
         <div id="presented">
           <Presentation />
         </div>
-        {/* <div id="contact">
-          <Contact />
-        </div> */}
         <Footer />
     </div>
   )

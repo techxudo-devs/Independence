@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const DETAILS = [
   {
-    number: '240',
+    number: '50',
     label: 'Premium Suits',
     description: 'Every winner takes home a tailored premium suit — no compromise on quality.',
   },
