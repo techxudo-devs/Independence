@@ -162,11 +162,11 @@ const Schedule = () => {
               OUR RESPECTED GUESTS
             </h2>
             <p className="text-xs sm:text-sm plus text-slate-500">
-              Meet our speakers and special guests
+              Meet our special guests
             </p>
 
             {/* Star Divider */}
-            <div className="flex items-center justify-center gap-3 mt-3">
+            <div className="flex items-center justify-center gap-3 mt-3 pb-4 md:pb-0">
               <div className="w-12 h-[1px] bg-amber-300" />
               <Star className="w-3 h-3 text-amber-500 fill-amber-500" />
               <div className="w-12 h-[1px] bg-amber-300" />

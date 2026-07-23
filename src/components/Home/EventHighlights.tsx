@@ -267,7 +267,7 @@ const FireworksIcon = () => (
 const HIGHLIGHTS = [
   {
     id: 1,
-    title: '240+\nExhibition Stalls',
+    title: '50+\nExhibition Stalls',
     description: 'Explore amazing products & services',
     icon: StallIcon,
   },

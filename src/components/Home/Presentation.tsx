@@ -9,7 +9,7 @@ const Presentation = () => {
           {/* Top Heading Badge Centered On Border Line */}
           <div className="absolute -top-14 left-1/2 -translate-x-1/2 flex items-center gap-3 whitespace-nowrap z-10">
             {/* <div className="w-6 sm:w-10 h-[1px] bg-gray-300" /> */}
-            <span className="text-[11px] sm:text-2xl font-bold life text-gray-800 uppercase">
+            <span className="text-xl sm:text-2xl font-bold life text-gray-800 uppercase">
               OUR PARTNERS & SUPPORTERS
             </span>
             {/* <div className="w-6 sm:w-10 h-[1px] bg-gray-300" /> */}

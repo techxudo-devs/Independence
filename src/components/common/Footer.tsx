@@ -38,11 +38,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           
           {/* BRAND COLUMN (Left - 4 Cols) */}
-          <div className="md:col-span-4 flex items-start gap-3.5">
+          <div className="md:col-span-4 flex items-center gap-3.5">
             <img 
               src="/images/federalLogo.png" 
               alt="Federation of Pakistan Australia Logo" 
-              className="h-16 w-16 sm:h-20 sm:w-20 rounded-full object-contain shrink-0" 
+              className="h-16 w-16 sm:h-30 sm:w-30 rounded-full object-contain shrink-0" 
             />
             <div className="flex flex-col text-left">
               <span className="text-[11px] sm:text-xs tracking-wide text-[#e2a82b] font-medium plus uppercase leading-tight">
@@ -142,7 +142,7 @@ const Footer = () => {
 
             {/* Newsletter Subscription */}
             <p className="text-xs text-gray-200 font-medium plus mb-1.5">
-              Subscribe to our newsletter
+              Pre-register for event
             </p>
 
             <form onSubmit={handleSubscribe} className="flex items-center max-w-sm">

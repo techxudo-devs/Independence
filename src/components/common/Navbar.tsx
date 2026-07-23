@@ -187,13 +187,13 @@ const Navbar = () => {
               Pakistan Australia
             </span>
           </div>
-          <button
+          {/* <button
             onClick={() => setMobileOpen(false)}
             className="p-2 -mr-2 rounded-lg text-white/50 hover:text-white hover:bg-white/[0.06] transition-all duration-200"
             aria-label="Close menu"
           >
             <X className="w-5 h-5" />
-          </button>
+          </button> */}
         </div>
 
         {/* Nav links */}
