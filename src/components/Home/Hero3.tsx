@@ -50,7 +50,7 @@ const Hero3 = () => {
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-serif italic text-white/95 text-base sm:text-lg md:text-2xl mb-1 tracking-wide drop-shadow-md life"
+          className="font-serif italic text-white/95 text-lg sm:text-xl md:text-2xl mb-1 tracking-wide drop-shadow-md life"
         >
           Together We Celebrate Freedom
         </motion.p>
@@ -63,17 +63,17 @@ const Hero3 = () => {
           className="flex flex-col items-center uppercase plus font-black tracking-tight leading-[1.03] mb-3 sm:mb-4"
         >
           {/* PAKISTAN */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFF5CE] via-[#E8CD7A] to-[#B38728] drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFF5CE] via-[#E8CD7A] to-[#B38728] drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)]">
             PAKISTAN
           </h1>
 
           {/* INDEPENDENCE DAY */}
-          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFF5CE] via-[#E8CD7A] to-[#B38728] drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFF5CE] via-[#E8CD7A] to-[#B38728] drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)]">
             INDEPENDENCE DAY
           </h2>
 
           {/* CELEBRATION 2027 */}
-          <h3 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
             CELEBRATION 2026
           </h3>
         </motion.div>
@@ -102,7 +102,7 @@ const Hero3 = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="max-w-2xl text-white/95 text-xs sm:text-sm md:text-base leading-relaxed font-normal mb-6 sm:mb-8 drop-shadow-md plus px-2"
+          className="max-w-2xl text-white/95 text-sm md:text-base leading-relaxed font-normal mb-6 sm:mb-8 drop-shadow-md plus px-2"
         >
           A grand family festival celebrating Pakistan&apos;s Independence
           together with Australian authorities and the community.
