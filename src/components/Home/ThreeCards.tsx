@@ -96,7 +96,7 @@ const ThreeCards = () => {
           </div>
 
           {/* Learn More Button */}
-          <div className="relative z-10 pt-4 flex gap-2">
+          <div className="relative z-10 pt-4 flex md:flex-row flex-col gap-2">
             <a
               href="#about"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-amber-300/40 bg-white/5 hover:bg-white/10 text-white text-xs font-medium uppercase tracking-wider transition-all duration-300 hover:border-amber-300 group cursor-pointer plus"

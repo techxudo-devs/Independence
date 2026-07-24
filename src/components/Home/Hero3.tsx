@@ -125,7 +125,7 @@ const Hero3 = () => {
                 SUNDAY
               </p>
               <p className="text-white font-medium plus text-sm sm:text-base tracking-wide uppercase">
-                15 AUGUST 2027
+                16 AUGUST 2026
               </p>
             </div>
           </div>

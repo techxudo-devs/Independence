@@ -91,7 +91,7 @@ const HeroBottom = () => {
 
             {/* Date pill */}
             <p className="text-[10px] sm:text-xs font-medium plus uppercase tracking-wide text-white/40">
-              14 — 16 August 2026
+              16 August 2026 - SUNDAY
             </p>
 
           </div>
